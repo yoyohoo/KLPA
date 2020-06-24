@@ -91,6 +91,10 @@
         App.call('changeTitle', 'yoyohoo');
         
         App.call('setTitleBarVisibility', '0');
+        
+        setTimeout(function(){
+            App.call('backToHome');
+        },5000);
 
         App.call('getPasession', function (res) {
             alert(res)

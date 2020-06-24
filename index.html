@@ -89,6 +89,10 @@
     window.onload = function () {
 
         App.call('changeTitle', 'yoyohoo');
+        
+        App.call('hideTitle', function(res){
+            document.write(res)
+        });
 
         App.call('getPasession', function (res) {
             alert(res)

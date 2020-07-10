@@ -7,6 +7,7 @@
 
 <body>
 </body>
+<script src="https://cdn.bootcdn.net/ajax/libs/vConsole/3.3.4/vconsole.min.js"></script>
 <script>
     //这里是天下通webview公共js调native的js
     ; (function (window, undefined) {
@@ -89,17 +90,25 @@
     window.onload = function () {
 
         App.call('changeTitle', 'yoyohoo');
-        
+
         App.call('setTitleBarVisibility', '0');
-        
-        setTimeout(function(){
+
+        setTimeout(function () {
             App.call('backToHome');
-        },5000);
+        }, 5000);
 
         App.call('getPasession', function (res) {
             alert(res)
             document.write(res)
         });
+
+        let isProduction = () => {
+            let host = location.hostname;
+            return host.indexOf('stock') > 0;
+        }
+
+        !isProduction() && new vConsole();
+
     }
 
 </script>

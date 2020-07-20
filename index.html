@@ -87,7 +87,10 @@
 
     }(window));
 
-        App.call('setTitleBarVisibility', '0');
+        try {
+               App.call('setTitleBarVisibility', '0');
+        }catch(ex){}
+        //App.call('setTitleBarVisibility', '0');
         App.call('getPasession', (session) => {
             if(session&&session.length) {
                             let url ="";

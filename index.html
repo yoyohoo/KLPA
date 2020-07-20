@@ -87,15 +87,20 @@
 
     }(window));
 
-          App.call('setTitleBarVisibility', '0');
+        App.call('setTitleBarVisibility', '0');
         App.call('getPasession', (session) => {
-            let url ="";
+            if(session&&session.length) {
+                            let url ="";
             url += '/KLPARest/getPilotTokenByPasession?';
             session = session.replace(/[\r\n]/g, "");
             session = session.replace(/\ +/g, "");
             session = session.replace(/\;+/g, "&");
             url += session;
             console.info("url-----", url)
+            }else {
+                       console.info("url-----false")
+            }
+
         });
 
 </script>

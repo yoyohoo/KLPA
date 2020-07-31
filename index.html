@@ -88,9 +88,9 @@
     }(window));
 
        window.onload = function() {
-                   App.call('getPasession', (session) => {
+             let aaa =      App.call('getPasession', (session) => {
             if(session&&session.length) {
-                            let url ="";
+            let url ="";
             url += '/KLPARest/getPilotTokenByPasession?';
             session = session.replace(/[\r\n]/g, "");
             session = session.replace(/\ +/g, "");
@@ -101,6 +101,8 @@
                        console.info("url-----false")
             }
         });
+        console.log('aaa:',aaa)
+
        }
  
 
